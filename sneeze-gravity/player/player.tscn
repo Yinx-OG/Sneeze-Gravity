@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dt810l0dtesrt"]
+
+[ext_resource type="Texture2D" uid="uid://ba5j6b0estklh" path="res://icon.svg" id="1_rkbax"]
+[ext_resource type="Script" uid="uid://brlp3hkm6t6dk" path="res://_core/state_machine.gd" id="2_g1dw6"]
+[ext_resource type="Script" uid="uid://cbdp4wdhy12wn" path="res://player/sprite_visual.gd" id="2_g6k8r"]
+[ext_resource type="Script" uid="uid://cgpcuc505simw" path="res://components/sneeze_timer.gd" id="2_qjkh3"]
+[ext_resource type="Script" uid="uid://corew4xwkknaa" path="res://player/states/grounded.gd" id="3_yw30f"]
+[ext_resource type="Script" uid="uid://3gb7gdbud6yo" path="res://player/states/airborne.gd" id="4_qjkh3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(64, 64)
+
+[node name="Player" type="CharacterBody2D" unique_id=657053630]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=397095479]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_rkbax")
+script = ExtResource("2_g6k8r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=813279925]
+shape = SubResource("RectangleShape2D_xrivr")
+
+[node name="SneezeTimer" type="Node" parent="." unique_id=27417948]
+script = ExtResource("2_qjkh3")
+
+[node name="StateMachine" type="Node" parent="." unique_id=1512071841 node_paths=PackedStringArray("intial_state")]
+script = ExtResource("2_g1dw6")
+intial_state = NodePath("Grounded")
+
+[node name="Grounded" type="Node" parent="StateMachine" unique_id=250548630]
+script = ExtResource("3_yw30f")
+
+[node name="Airborne" type="Node" parent="StateMachine" unique_id=299244469]
+script = ExtResource("4_qjkh3")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1161724069]
+zoom = Vector2(1.5, 1.5)
+limit_smoothed = true
+position_smoothing_enabled = true

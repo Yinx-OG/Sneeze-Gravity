@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bjpnllvt7fki3"]
+
+[ext_resource type="PackedScene" uid="uid://dt810l0dtesrt" path="res://player/player.tscn" id="1_823pn"]
+[ext_resource type="PackedScene" uid="uid://cg3d2nxqk05ay" path="res://props/floor.tscn" id="2_iss0w"]
+
+[node name="Level_0" type="Node2D" unique_id=1481494038]
+
+[node name="Player" parent="." unique_id=657053630 instance=ExtResource("1_823pn")]
+position = Vector2(652, 301)
+
+[node name="Control" type="Control" parent="." unique_id=765012567]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Floor" parent="Control" unique_id=391456754 instance=ExtResource("2_iss0w")]
+position = Vector2(330, 397)
+
+[node name="Floor2" parent="Control" unique_id=797518721 instance=ExtResource("2_iss0w")]
+position = Vector2(462, 209)
+
+[node name="Floor3" parent="Control" unique_id=1726491919 instance=ExtResource("2_iss0w")]
+position = Vector2(954, 205)
+rotation = 1.5707964
+
+[node name="Floor6" parent="Control" unique_id=1081245830 instance=ExtResource("2_iss0w")]
+position = Vector2(472, -96)
+rotation = 1.5707964
+
+[node name="Floor7" parent="Control" unique_id=8091788 instance=ExtResource("2_iss0w")]
+position = Vector2(108, 63)
+rotation = 1.5707964
+
+[node name="Floor11" parent="Control" unique_id=93610715 instance=ExtResource("2_iss0w")]
+position = Vector2(108, -259)
+rotation = 1.5707964
+
+[node name="Floor4" parent="Control" unique_id=239067481 instance=ExtResource("2_iss0w")]
+position = Vector2(458, 554)
+
+[node name="Floor5" parent="Control" unique_id=205341408 instance=ExtResource("2_iss0w")]
+position = Vector2(22, 554)
+
+[node name="Floor8" parent="Control" unique_id=104692663 instance=ExtResource("2_iss0w")]
+position = Vector2(-197, 244)
+
+[node name="Floor9" parent="Control" unique_id=395605227 instance=ExtResource("2_iss0w")]
+position = Vector2(-11, -257)
+
+[node name="Floor10" parent="Control" unique_id=427869939 instance=ExtResource("2_iss0w")]
+position = Vector2(-162, 58)
